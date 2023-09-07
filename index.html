@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jonas Daub</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section>
+      <div class="container">
+        <div class="card front-face">
+          <header>
+            <span class="logo">
+              
+              <h3>Jonas Daub</h3>
+            </span>
+            
+          </header>
+
+          <div class="card-details">
+            <div class="name-number">
+              <h6>E-Mail</h6>
+              <h5 class="number">jonas.daub31@gmail.com</h5>
+              <h6>Study</h6>
+              <h5 class="number">Bunsen Gymnasium, Heidelberg</h5>
+              
+            </div>
+
+            <div class="valid-date">
+              <h6>Born</h6>
+              <h5>10/05</h5>
+            </div>
+          </div>
+        </div>
+
+        <div class="card back-face">
+
+
+          <div class="card-details">
+            <div class="name-number">
+              <h6> </h6>
+              <h6> </h6>
+              <h6> </h6>
+              <a href="documents/CV.pdf" class="number-as-h5">CV</a>
+              <h6></h6>
+              <a href="https://github.com/Daubsi" class="number-as-h5">Github</a>
+              <h6></h6>
+              <a href="https://www.linkedin.com/in/jonas-daub-a98285290/" class="number-as-h5">LinkedIn</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
+<script>
+  let container = document.querySelector('.container');
+  let isHovered = false;
+  let timer;
+
+  container.addEventListener('mouseenter', () => {
+    if (!isHovered) {
+      container.style.transform = 'rotateY(180deg)';
+      isHovered = true;
+      clearTimeout(timer); // Clear any existing timers
+    }
+  });
+
+  container.addEventListener('mouseleave', () => {
+    if (isHovered) {
+      timer = setTimeout(() => {
+        isHovered = false;
+        container.style.transform = 'rotateY(0deg)';
+      }, 2000); // 3 seconds cooldown
+    }
+  });
+</script>
+
